@@ -813,6 +813,9 @@ function updateItemSummary(currentStats) {
             case "재활용 아이템, 빨간색":
                 summaryText = `효과 없음 (프린터용)`;
                 break;
+            case "불안정한 방출기":
+                summaryText = `주기적으로 주변에 <b>${(stats.atk * 1).toFixed(1)}</b> 피해를 입히는 공허 폭발 발생`;
+                break;
             // 보스
             case "여왕의 분비샘":
                 summaryText = `최대 근위병 수 <b>${count}마리</b> (30초마다 소환)`;
@@ -870,6 +873,9 @@ function updateItemSummary(currentStats) {
                 break;
             case "재활용 아이템, 노란색":
                 summaryText = `효과 없음 (프린터용)`;
+                break;
+            case "유물 열쇠":
+                summaryText = `유물 스테이지 보스인 '불확실한 설계'에게 피해를 주기 위한 소모품`;
                 break;
             // 루나
             case "익사자들의 손짓":
@@ -929,6 +935,25 @@ function updateItemSummary(currentStats) {
             case "첨정석 토닉":
                 summaryText = `후유증 디버프 수치 <b>-${5 * count}%</b> (확률 20%)`;
                 break;
+            case "서약의 목걸이":
+                summaryText = `보유 중 사망 시 <b>'완전함'</b> 엔딩 분기로 진입`;
+                break;
+            case "빛나는 운석":
+                summaryText = `20초간 하늘에서 <b>${(stats.atk * 6).toFixed(1)}</b> 피해를 입히는 메테오 투하 (아군 피해 주의)`;
+                break;
+            case "지옥불 팅크":
+                summaryText = `주변 15m 내 캐릭터에게 초당 최대 체력 비례 화상 피해 (본인 1%, 아군 0.5%)`;
+                break;
+            case "비탄의 조각상":
+                summaryText = `범위 내 적들의 이동 속도 <b>50%</b>, 방어력 <b>60</b> 감소`;
+                break;
+            case "공유된 설계":
+                summaryText = `플레이어를 완벽한 상태(<b>루나 키메라</b>)로 변형`;
+                break;
+            case "반항의 창끝":
+                summaryText = `보스 대상 피해량 <b>+${20 * count}%</b> 증가`;
+                break;
+            // 공허
             case "더 안전한 공간":
                 summaryText = `재충전 시간 <b>${(15 * Math.pow(0.9, count)).toFixed(1)}초</b> [차단 효과]`;
                 break;
@@ -972,6 +997,9 @@ function updateItemSummary(currentStats) {
                 summaryText = `소환 주기 <b>${(60 * Math.pow(0.5, count - 1)).toFixed(1)}초</b> / 최대 <b>${count}마리</b>`;
                 break;
             // 장비
+            case "연료 배열":
+                summaryText = `체력이 50% 미만으로 떨어지면 <b>폭발</b>하여 즉사 (퀘스트용)`;
+                break;
             case "프레온 축전기":
                 summaryText = `폭발 피해 <b>4000%</b> / 범위 20m`;
                 break;
@@ -1044,7 +1072,7 @@ function updateItemSummary(currentStats) {
             case "화산 달걀":
                 summaryText = `화염 구체로 변신하여 돌진, 종료 시 <b>${(stats.atk * 5).toFixed(1)}</b> 피해`;
                 break;
-            case "비취코끼리":
+            case "비취 코끼리":
                 summaryText = `5초 동안 <b>방어력 500</b> 증가 (피해 대폭 감소)`;
                 break;
             case "기묘한 꽃병":
@@ -1064,6 +1092,57 @@ function updateItemSummary(currentStats) {
                 break;
             case "원격 카페인 공급기":
                 summaryText = `사용 시 공중에서 자판기 투하 (주변 아군 버프)`;
+                break;
+            case "오릴리오나이트의 축복":
+                summaryText = `텔레포터 이벤트 시 <b>오릴리오나이트</b>를 아군으로 소환`;
+                break;
+            case "그의 악의적인 선물":
+                summaryText = `미트릭스의 힘을 빌려 공격 시 보스 특유의 충격파 발생`;
+                break;
+            case "하나된 정신":
+                summaryText = `공격 시 추적 발사체를 생성하여 <b>${(stats.atk * 0.6).toFixed(1)}</b> 피해`;
+                break;
+            case "그의 인도":
+                summaryText = `공격 시 하늘에서 빛의 기둥을 소환하여 강력한 피해`;
+                break;
+            case "이프리트의 차이":
+                summaryText = `공격 시 지면에 불길을 남겨 적에게 화상 피해`;
+                break;
+            case "살을 에는 그녀의 포옹":
+                summaryText = `공격 시 적을 빙결시켜 <b>이동 속도 80%</b> 감소`;
+                break;
+            case "두 타격 사이의 고요":
+                summaryText = `공격 시 적에게 <b>과부하 폭탄</b>을 부착`;
+                break;
+            case "은쿠하나의 보고서":
+                summaryText = `치유량의 10%를 에너지로 저장하여 해골 탄환으로 발사`;
+                break;
+            case "데우스 엑스 마키나":
+                summaryText = `스테이지의 모든 상호작용 객체를 무료로 활성화`;
+                break;
+            case "화산 달걀":
+                summaryText = `화염 구체로 변신하여 돌진, 종료 시 <b>${(stats.atk * 5).toFixed(1)}</b> 피해`;
+                break;
+            case "기묘한 꽃병":
+                summaryText = `최대 1000m 거리의 지점을 연결하는 이동용 터널 생성`;
+                break;
+            case "황금포":
+                summaryText = `소지한 골드에 비례해 강력한 포탄 발사 (발당 최대 <b>${(stats.atk * 20).toFixed(1)}</b> 피해)`;
+                break;
+            case "생명의 씨앗":
+                summaryText = `사용 시 모든 아군의 체력을 <b>50%</b> 즉시 회복`;
+                break;
+            case "재활용기":
+                summaryText = `장착 아이템이나 드랍된 아이템을 다른 아이템으로 변환`;
+                break;
+            case "레이더 스캐너":
+                summaryText = `10초 동안 주변 500m 내의 모든 상자/객체 위치 표시`;
+                break;
+            case "원격 카페인 공급기":
+                summaryText = `사용 시 공중에서 자판기 투하 (주변 아군 버프 제공)`;
+                break;
+            case "유령 왕관":
+                summaryText = `3초간 은신 상태가 되며 이동 속도 <b>40%</b> 증가`;
                 break;
         }
 
