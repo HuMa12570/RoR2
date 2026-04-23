@@ -303,7 +303,7 @@ const itemStatData = {
     // --- 티어 2 (초록색) ---
     "포식 본능": { atkSpeed: 12 },
     "전투의 뿔피리": { atkSpeed: 70 },
-    "은밀한 근위병": { hp: 100 },
+    "주입 약물": { hp: 100 },
     "장미 버클러": { armor: 30 },
     "사냥꾼의 작살": { atkSpeed: 10, moveSpeed: 10 },
     "버저커의 견갑": { atkSpeed: 100 },
