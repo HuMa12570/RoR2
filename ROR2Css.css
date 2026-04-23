@@ -113,11 +113,6 @@ body, html {margin: 0; padding: 0;background-color: #000;color: #fff;font-family
     overflow-y: auto;
     min-height: 0;
     -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.item-grid-box::-webkit-scrollbar {
-    display: none;
 }
 
 .item-card {
@@ -251,14 +246,6 @@ body, html {margin: 0; padding: 0;background-color: #000;color: #fff;font-family
     grid-auto-rows: min-content;
     gap: 12px;
     align-content: start;
-    
-    /* 스크롤바 숨김 처리 */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-
-.character-list::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
 }
 
 /* 아이콘 박스 내부 이미지 설정 */
@@ -321,16 +308,6 @@ body, html {margin: 0; padding: 0;background-color: #000;color: #fff;font-family
 #item-summary-list {
     max-height: 330px;    /* 원하는 최대 높이 설정 */
     overflow-y: auto;     /* 세로 스크롤 활성화 */
-    
-    /* IE and Edge에서 스크롤바 숨기기 */
-    -ms-overflow-style: none;  
-    /* Firefox에서 스크롤바 숨기기 */
-    scrollbar-width: none; 
-}
-
-/* Chrome, Safari, Opera에서 스크롤바 숨기기 */
-#item-summary-list::-webkit-scrollbar {
-    display: none;
 }
 
 .level-control-wrapper {
@@ -500,4 +477,26 @@ body, html {margin: 0; padding: 0;background-color: #000;color: #fff;font-family
 .item-tabs button:hover {
     filter: brightness(1.2);
     transform: translateY(-1px);
+}
+
+/* 1. 전체 스크롤바 넓이 설정 */
+::-webkit-scrollbar {
+    width: 8px;  /* 세로 스크롤바 두께 */
+    height: 8px; /* 가로 스크롤바 두께 */
+}
+
+/* 2. 스크롤바 뒷배경 (트랙) - 투명하게 설정 */
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+/* 3. 스크롤바 막대 (핸들) - 디자인 입히기 */
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3); /* 반투명한 흰색 */
+    border-radius: 10px; /* 둥글게 */
+}
+
+/* 4. 마우스를 올렸을 때만 좀 더 진하게 (선택 사항) */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5); 
 }
