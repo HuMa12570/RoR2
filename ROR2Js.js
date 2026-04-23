@@ -686,6 +686,9 @@ function updateItemSummary(currentStats) {
             case "렙톤 데이지":
                 summaryText = `치유 노바 방출 횟수 <b>${count}</b>회`;
                 break;
+            case "불안정한 방출기":
+                summaryText = `주기적으로 주변에 <b>${(stats.atk * 1).toFixed(1)}</b> 피해를 입히는 공허 폭발 발생`;
+                break;
             case "돌파 지느러미":
                 summaryText = `연속 발동 <b>${2 + (count - 1)}</b>회 (띄우기 시 피해 +10%)`;
                 break;
@@ -813,9 +816,6 @@ function updateItemSummary(currentStats) {
             case "재활용 아이템, 빨간색":
                 summaryText = `효과 없음 (프린터용)`;
                 break;
-            case "불안정한 방출기":
-                summaryText = `주기적으로 주변에 <b>${(stats.atk * 1).toFixed(1)}</b> 피해를 입히는 공허 폭발 발생`;
-                break;
             // 보스
             case "여왕의 분비샘":
                 summaryText = `최대 근위병 수 <b>${count}마리</b> (30초마다 소환)`;
@@ -911,6 +911,9 @@ function updateItemSummary(currentStats) {
             case "이단의 발걸음":
                 summaryText = `치유량 <b>${25 * count}%</b> / 지속 시간 <b>${3 * count}초</b>`;
                 break;
+            case "반항의 창끝":
+                summaryText = `보스 대상 피해량 <b>+${20 * count}%</b> 증가`;
+                break;
             case "자기 중심성":
                 summaryText = `폭탄 생성 <b>${(3 * Math.pow(0.5, count - 1)).toFixed(1)}초</b> / 최대 <b>${3 + (count - 1)}개</b>`;
                 break;
@@ -949,9 +952,6 @@ function updateItemSummary(currentStats) {
                 break;
             case "공유된 설계":
                 summaryText = `플레이어를 완벽한 상태(<b>루나 키메라</b>)로 변형`;
-                break;
-            case "반항의 창끝":
-                summaryText = `보스 대상 피해량 <b>+${20 * count}%</b> 증가`;
                 break;
             // 공허
             case "더 안전한 공간":
@@ -1069,9 +1069,6 @@ function updateItemSummary(currentStats) {
             case "제발 용서해줘":
                 summaryText = `사용 시 8초간 자신의 <b>'처치 시 발동'</b> 아이템 효과를 매초 발동`;
                 break;
-            case "화산 달걀":
-                summaryText = `화염 구체로 변신하여 돌진, 종료 시 <b>${(stats.atk * 5).toFixed(1)}</b> 피해`;
-                break;
             case "비취 코끼리":
                 summaryText = `5초 동안 <b>방어력 500</b> 증가 (피해 대폭 감소)`;
                 break;
@@ -1102,7 +1099,7 @@ function updateItemSummary(currentStats) {
             case "하나된 정신":
                 summaryText = `공격 시 추적 발사체를 생성하여 <b>${(stats.atk * 0.6).toFixed(1)}</b> 피해`;
                 break;
-            case "그의 인도":
+            case "그의 안도":
                 summaryText = `공격 시 하늘에서 빛의 기둥을 소환하여 강력한 피해`;
                 break;
             case "이프리트의 차이":
