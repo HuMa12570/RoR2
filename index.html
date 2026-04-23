@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoR2 Build Simulator</title>
+    <link rel="stylesheet" href="ROR2Css.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="side-panel left-panel">
+            <h2 class="panel-title">SURVIVORS</h2>
+            <div id="survivor-list" class="character-list"></div>
+        </aside>
+
+        <main class="center-display">
+            <div id="welcome-msg">캐릭터를 선택하여 빌드를 시작하세요</div>
+            
+            <div id="content-area" style="display: none; width: 100%;">
+                <div class="main-content-wrapper">
+                    <section class="center-column">
+                        <h1 id="selected-char-name">캐릭터 이름</h1>
+                        <div class="char-large-visual">
+                            <div id="char-img-container"></div>
+                        </div>
+                        <div class="stats-level-container">
+                            <div class="base-stats-box">
+                                <h3>BASE STATS</h3>
+                                <div class="stat-item">체력 <span id="stat-hp">110</span></div>
+                                <div class="stat-item">방어력 <span id="stat-armor">0</span></div>
+                                <div class="stat-item">체력 재생 <span id="stat-regen">1.0 hp/s</span></div>
+                                <div class="stat-item">공격력 <span id="stat-atk">12.0</span></div>
+                                <div class="stat-item">이동 속도 <span id="stat-speed">7.0 m/s</span></div>
+                                <div class="stat-item">공격 속도 <span id="stat-atkspeed">1.0 </span></div>
+                            </div>
+                            <div class="level-control-box">
+                                <h3>LEVEL</h3>
+                                <div id="display-level" class="level-number">1</div>
+                                <div class="level-btns">
+                                    <button onclick="updateLevel(-5)">-5</button>
+                                    <button onclick="updateLevel(-1)">-1</button>
+                                    <button onclick="updateLevel(1)">+1</button>
+                                    <button onclick="updateLevel(5)">+5</button>
+                                </div>
+                                <div class="level-action-btns">
+                                    <button class="reset-btn" onclick="resetLevel()">초기화</button>
+                                    <button class="max-btn" onclick="setMaxLevel()">MAX</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="item-summary-container" class="item-summary-box">
+                            <h3>아이템별 적용 효과</h3>
+                            <div id="item-summary-list">
+                                <p>아이템을 추가하면 상세 수치가 여기에 표시됩니다.</p>
+                            </div>
+                        </div>
+                    </section>
+                    <aside class="build-column my-item-column">
+                        <h3>My Items</h3>
+                        <div id="my-items" class="item-grid-box"></div>
+                        
+                        <div id="item-description-panel" class="description-box">
+                            <h4 id="desc-name">아이템을 선택하세요</h4>
+                            <p id="desc-text">아이템의 상세 효과가 여기에 표시됩니다.</p>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </main>
+
+        <aside class="side-panel right-panel">
+            <h2 class="panel-title">ITEM LIBRARY</h2>
+            <div class="item-tabs">
+                <button onclick="filterItems('티어 1')">티어 1</button>
+                <button onclick="filterItems('티어 2')">티어 2</button>
+                <button onclick="filterItems('티어 3')">티어 3</button>
+                <button onclick="filterItems('보스')">보스</button>
+                <button onclick="filterItems('루나')">루나</button>
+                <button onclick="filterItems('공허')">공허</button>
+                <button onclick="filterItems('장비')">장비</button>
+            </div>
+            <div id="item-list" class="item-grid-box"></div>
+        </aside>
+    </div>
+    <script src="ROR2Js.js"></script>
+</body>
+</html>
