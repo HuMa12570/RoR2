@@ -942,7 +942,7 @@ function updateItemSummary(currentStats) {
                 summaryText = `보유 중 사망 시 <b>'완전함'</b> 엔딩 분기로 진입`;
                 break;
             case "빛나는 운석":
-                summaryText = `20초간 하늘에서 <b>${(stats.atk * 6).toFixed(1)}</b> 피해를 입히는 메테오 투하 (아군 피해 주의)`;
+                summaryText = `20초간 하늘에서 메테오를 투하하여 범위 내 모든 캐릭터에게 큰 피해`;
                 break;
             case "지옥불 팅크":
                 summaryText = `주변 15m 내 캐릭터에게 초당 최대 체력 비례 화상 피해 (본인 1%, 아군 0.5%)`;
@@ -1097,7 +1097,7 @@ function updateItemSummary(currentStats) {
                 summaryText = `미트릭스의 힘을 빌려 공격 시 보스 특유의 충격파 발생`;
                 break;
             case "하나된 정신":
-                summaryText = `공격 시 추적 발사체를 생성하여 <b>${(stats.atk * 0.6).toFixed(1)}</b> 피해`;
+                summaryText = `공격 시 적을 추적하는 유도 화살을 생성하여 피해`;
                 break;
             case "그의 안도":
                 summaryText = `공격 시 하늘에서 빛의 기둥을 소환하여 강력한 피해`;
@@ -1118,13 +1118,13 @@ function updateItemSummary(currentStats) {
                 summaryText = `스테이지의 모든 상호작용 객체를 무료로 활성화`;
                 break;
             case "화산 달걀":
-                summaryText = `화염 구체로 변신하여 돌진, 종료 시 <b>${(stats.atk * 5).toFixed(1)}</b> 피해`;
+                summaryText = `화염 구체로 변신하여 돌진, 종료 시 주변에 강력한 폭발 피해`;
                 break;
             case "기묘한 꽃병":
                 summaryText = `최대 1000m 거리의 지점을 연결하는 이동용 터널 생성`;
                 break;
             case "황금포":
-                summaryText = `소지한 골드에 비례해 강력한 포탄 발사 (발당 최대 <b>${(stats.atk * 20).toFixed(1)}</b> 피해)`;
+                summaryText = `소지한 골드에 비례해 강력한 포탄 발사`;
                 break;
             case "생명의 씨앗":
                 summaryText = `사용 시 모든 아군의 체력을 <b>50%</b> 즉시 회복`;
