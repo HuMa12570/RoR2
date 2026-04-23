@@ -573,6 +573,12 @@ function updateItemSummary(currentStats) {
             case "회춘의 선반":
                 summaryText = `모든 회복 효율 <b>x${(1 + count)}</b>배 증가`;
                 break;
+            case "녹슨 열쇠":
+                summaryText = `스테이지 어딘가에 숨겨진 <b>녹슨 상자</b> 오픈 가능 (중첩 시 등급 상승)`;
+                break;
+            case "파워 엘릭서":
+                summaryText = `체력이 25% 이하로 떨어지면 체력을 꽉 채우고 소모됨`;
+                break;
             // 티어 2
             case "포식 본능":
                 summaryText = `치명타 시 공속 증가 한도 <b>+${36 + 24 * (count - 1)}%</b>`;
@@ -691,6 +697,12 @@ function updateItemSummary(currentStats) {
                 break;
             case "버저커의 견갑":
                 summaryText = `광분 지속 시간 <b>${6 + 4 * (count - 1)}초</b>`;
+                break;
+            case "배송 요청 양식":
+                summaryText = `매 스테이지 시작 시 <b>${count}개</b>의 보급품이 들어있는 배송물 생성`;
+                break;
+            case "재생성되는 찌꺼기":
+                summaryText = `제작기에서 <b>녹색 아이템</b> 재료로 사용해도 소모되지 않음`;
                 break;
             // 티어 3
             case "외계인 머리":
@@ -929,7 +941,7 @@ function updateItemSummary(currentStats) {
             case "눈물 버섯":
                 summaryText = `질주 중 초당 회복 <b>${2 * count}%</b>`;
                 break;
-            case "뭔가에 덮인 열쇠":
+            case "뭔가에 덮여 있는 열쇠":
                 summaryText = `공허 상자 생성 <b>${count}개</b>`;
                 break;
             case "폴리류트":
@@ -953,7 +965,7 @@ function updateItemSummary(currentStats) {
             case "물속의 꽃":
                 summaryText = `아이템 업그레이드 수 <b>${3 * count}개</b>`;
                 break;
-            case "다능성 유출":
+            case "다능성 유충":
                 summaryText = `부활 횟수 <b>${count}회</b> (부활 시 전체 오염)`;
                 break;
             case "갓 부화한 조에아":
@@ -975,7 +987,7 @@ function updateItemSummary(currentStats) {
             case "이계의 과일":
                 summaryText = `즉시 치유 <b>최대 체력의 50%</b>`;
                 break;
-            case "비jade 코끼리":
+            case "비취 코끼리":
                 summaryText = `방어력 <b>+500</b> (5초 지속)`;
                 break;
             case "장엄한 축전기":
@@ -1004,6 +1016,54 @@ function updateItemSummary(currentStats) {
                 break;
             case "중역 카드":
                 summaryText = `골드 환급 <b>10%</b> / 멀티샵 유지`;
+                break;
+            case "트로피 헌터의 삼각모자":
+                summaryText = `보스 처치 시 확정적으로 보스 아이템 드랍 후 소모`;
+                break;
+            case "오릴리오나이트의 축복":
+                summaryText = `텔레포터 이벤트 시 <b>오릴리오나이트</b>를 아군으로 소환`;
+                break;
+            case "이프리트의 차이":
+                summaryText = `공격 시 지면에 불길을 남겨 적에게 화상 피해`;
+                break;
+            case "살을 에는 그녀의 포옹":
+                summaryText = `공격 시 적을 빙결시켜 <b>이동 속도 80%</b> 감소`;
+                break;
+            case "두 타격 사이의 고요":
+                summaryText = `공격 시 적에게 <b>과부하 폭탄</b>을 부착`;
+                break;
+            case "연료 배열":
+                summaryText = `체력이 50% 미만으로 떨어지면 <b>폭발</b>하여 즉사 (수리용)`;
+                break;
+            case "폭발 세례":
+                summaryText = `공격 시 25% 확률로 폭발 피해 <b>300%</b> (범위 10m)`;
+                break;
+            case "제발 용서해줘":
+                summaryText = `사용 시 8초간 자신의 <b>'처치 시 발동'</b> 아이템 효과를 매초 발동`;
+                break;
+            case "화산 달걀":
+                summaryText = `화염 구체로 변신하여 돌진, 종료 시 <b>${(stats.atk * 5).toFixed(1)}</b> 피해`;
+                break;
+            case "비취코끼리":
+                summaryText = `5초 동안 <b>방어력 500</b> 증가 (피해 대폭 감소)`;
+                break;
+            case "기묘한 꽃병":
+                summaryText = `최대 1000m 거리의 지점을 연결하는 이동용 터널 생성`;
+                break;
+            case "황금포":
+                summaryText = `소지한 골드에 비례해 강력한 포탄 발사`;
+                break;
+            case "생명의 씨앗":
+                summaryText = `사용 시 모든 아군의 체력을 <b>50%</b> 즉시 회복`;
+                break;
+            case "우윳빛깔 번데기":
+                summaryText = `비행 능력을 얻으며 <b>이동 속도 20%</b> 증가`;
+                break;
+            case "레이더 스캐너":
+                summaryText = `10초 동안 주변 500m 내의 모든 상자/객체 위치 표시`;
+                break;
+            case "원격 카페인 공급기":
+                summaryText = `사용 시 공중에서 자판기 투하 (주변 아군 버프)`;
                 break;
         }
 
